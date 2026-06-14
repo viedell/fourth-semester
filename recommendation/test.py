@@ -1,5 +1,9 @@
 import pandas as pd
 import numpy as np
+import os
+
+# Check current folder
+print("Current Directory:", os.getcwd())
 
 # Load ratings data
 ratings = pd.read_csv(
@@ -25,4 +29,6 @@ movie_data = pd.merge(ratings, movies, on='movie_id')
 movie_data.drop_duplicates(inplace=True)
 movie_data.dropna(inplace=True)
 
+# Check result
 print(movie_data.head())
+print(movie_data.info())
